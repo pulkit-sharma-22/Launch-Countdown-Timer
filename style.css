@@ -18,7 +18,8 @@
 
 body{
     background-image: url(images/bg-stars.svg);
-    background-color: var(--Very-dark-mostly-black-blue);
+    /* background-color: var(--Very-dark-mostly-black-blue); */
+    background-color: var(--Very-dark-blue);
     color: var(--White);
     min-width: 100vh;
     /* position: relative; */
@@ -40,53 +41,120 @@ header{
 .title{
     text-align: center;
     /* width: 100%; */
-    letter-spacing: 2px;
+    letter-spacing: 4px;
+    /* margin-bottom: 160px; */
     /* display: flex;
     align-items: center; */
+    position: relative;
+    bottom: 130px;
 
     /* border: 1px solid red; */
+}
+
+.title p{
+    font-size: 18px;
 }
 
 .launch-time{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 360px;
+    gap: 20px;
+    width: 100%;
+    position: relative;
+    /* padding-top: 160px; */
 
-    /* border: 1px solid red; */
+    border: 1px solid yellow;
 }
 
 .launch-time div{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     /* padding-left: 20px; */
     
 }
 
-.days-num, .hours-num, .minutes-num, .seconds-num{
+.box{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 5px;
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-radius: 7px;
     background-color: var(--Dark-desaturated-blue);
+    margin-bottom: 20px;
+    clip: rect(0px, 0px, 0px, 0px);
+    /* border: 1px solid wheat; */
 }
 
+.box::before{
+    display: block;
+    content: "";
+    width: 110px;
+    height: 55px;
+    background-color:  var(--Dark-desaturated-blue);
+    position: absolute;
+    top: 0%;
+    mix-blend-mode: multiply;
+    opacity: 20%;
+    /* border: 1px solid white; */
+}
+
+/* .box::after{
+    display: block;
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 100px;
+    opacity: 100%;
+    mix-blend-mode: normal;
+    background-color: white;
+    position: absolute;
+    left: -7%;
+    top: 45%;
+} */
+
 .launch-time p:nth-child(1){
+    /* font-size: 100px; */
+}
+
+/* Numbers in the box */
+.box p{
     text-align: center;
+    font-size: 57px;
+    font-weight: bold;
+    color: var(--Soft-red);
+    /* scale: (2.5, 1); */
+    /* transform: scaleY(105%);
+    transform: scaleX(105%); */
+}
+
+.text{
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--Grayish-blue);
+    letter-spacing: 5px;
 }
 
 .icons{
     position: fixed;
-    bottom: 10%;
+    bottom: 6%;
+    display: flex;
+    gap: 30px;
+}
+
+.icons img{
+    width: 15px;
+    /* font-size: 10px; */
 }
 
 .mntn{
     z-index: -100;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     width: 100vw;
     /* border: 1px solid lightblue; */
 }
@@ -109,9 +177,14 @@ footer{
 }
 
 .attribution { 
-    font-size: 11px; text-align: center;
+    text-align: center;
     padding-top: 40px;
+}
+
+.attribution p, a{
+    font-size: 10px; 
  }
+
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
