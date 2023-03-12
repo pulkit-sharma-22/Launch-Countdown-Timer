@@ -18,11 +18,9 @@
 
 body{
     background-image: url(images/bg-stars.svg);
-    /* background-color: var(--Very-dark-mostly-black-blue); */
     background-color: var(--Very-dark-blue);
     color: var(--White);
     min-width: 100vh;
-    /* position: relative; */
 }
 
 header{
@@ -32,23 +30,14 @@ header{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* width: 1440px; */
     width: 100%;
-
-    /* border: 2px solid greenyellow; */
 }
 
 .title{
     text-align: center;
-    /* width: 100%; */
     letter-spacing: 4px;
-    /* margin-bottom: 160px; */
-    /* display: flex;
-    align-items: center; */
     position: relative;
-    bottom: 130px;
-
-    /* border: 1px solid red; */
+    bottom: 120px;
 }
 
 .title p{
@@ -62,9 +51,8 @@ header{
     gap: 20px;
     width: 100%;
     position: relative;
-    /* padding-top: 160px; */
 
-    border: 1px solid yellow;
+    /* border: 1px dotted white; */
 }
 
 .launch-time div{
@@ -72,36 +60,88 @@ header{
     flex-direction: column;
     align-items: center;
     position: relative;
-    /* padding-left: 20px; */
-    
 }
 
-.box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 110px;
-    height: 110px;
-    border-radius: 7px;
-    background-color: var(--Dark-desaturated-blue);
-    margin-bottom: 20px;
-    clip: rect(0px, 0px, 0px, 0px);
-    /* border: 1px solid wheat; */
-}
-
-.box::before{
-    display: block;
+/* LEFT CIRCLE CLIPPING */
+.circle1::before{
     content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100px;
+    background-color: var(--Very-dark-blue);
+    z-index: 3000;
+    position: absolute;
+    top: 60px;
+    left: -10px;
+}
+
+.circle1{
+    position: relative;
+}
+
+/* RIGHT CIRCLE CLIPPING */
+.circle2{
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100px;
+    background-color: var(--Very-dark-blue);
+    /* background-color: yellow; */
+    z-index: 3000;
+    position: absolute;   
+    bottom: -60px;
+    right: -55px;
+}
+
+.box-up{
+    background-color: var(--Dark-desaturated-blue);
+    filter: brightness(85%);
     width: 110px;
     height: 55px;
-    background-color:  var(--Dark-desaturated-blue);
-    position: absolute;
-    top: 0%;
-    mix-blend-mode: multiply;
-    opacity: 20%;
-    /* border: 1px solid white; */
+    border-radius: 7px 7px 0px 0px;
+    display: flex;
+    justify-content:end;
+    position: relative;
+    overflow: hidden;
 }
+
+.box-up p{
+    font-size: 57px;
+    font-weight: bold;
+    color: var(--Soft-red);
+    position: absolute;
+    bottom: -38px;
+    z-index: 200;
+}
+
+.box-down{
+    background-color: var(--Dark-desaturated-blue);
+    width: 110px;
+    height: 55px;
+    border-radius: 0px 0px 7px 7px;
+    display: flex;
+    justify-content:end;
+    position: relative;
+    overflow: hidden;
+}
+
+.box-down::after{
+    content: "";
+    display: block;
+    border: 1px outset var(--Grayish-blue);
+}
+
+.box-down p{
+    font-size: 57px;
+    font-weight: bold;
+    color: var(--Soft-red);
+    position: absolute;
+    bottom: 17px;
+    z-index: 200;
+}
+
 
 /* .box::after{
     display: block;
@@ -117,16 +157,18 @@ header{
     top: 45%;
 } */
 
+
+
 .launch-time p:nth-child(1){
     /* font-size: 100px; */
 }
 
 /* Numbers in the box */
 .box p{
-    text-align: center;
+    /* text-align: center;
     font-size: 57px;
     font-weight: bold;
-    color: var(--Soft-red);
+    color: var(--Soft-red); */
     /* scale: (2.5, 1); */
     /* transform: scaleY(105%);
     transform: scaleX(105%); */
@@ -137,6 +179,7 @@ header{
     font-weight: 400;
     color: var(--Grayish-blue);
     letter-spacing: 5px;
+    margin-top: 20px;
 }
 
 .icons{
